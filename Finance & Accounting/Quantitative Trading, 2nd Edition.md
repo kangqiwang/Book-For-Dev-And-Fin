@@ -1,0 +1,2 @@
+# Quantitative Trading, 2nd Edition
+this notes has been created based on [Quantitative Trading, 2nd Edition](https://learning.oreilly.com/library/view/quantitative-trading-2nd/9781119800064/), thanks the author [Ernest P. Chan](https://epchan.com/)

@@ -1,0 +1,2 @@
+# Learning OpenCV 4 Computer Vision with Python 3 - Third Edition
+this notes has been created based on [Learning OpenCV 4 Computer Vision with Python 3 - Third Edition](https://learning.oreilly.com/library/view/learning-opencv-4/9781789531619/), thanks the author [Joseph Howse](https://twitter.com/CatsAndMonkeys?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor), [Joe Minichino](https://www.linkedin.com/in/joeminichino/?originalSubdomain=ie)

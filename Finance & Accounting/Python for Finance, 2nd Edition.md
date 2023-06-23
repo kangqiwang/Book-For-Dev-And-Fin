@@ -1,0 +1,2 @@
+# Python for Finance, 2nd Edition
+this notes has been created based on [Python for Finance, 2nd Edition](https://learning.oreilly.com/library/view/python-for-finance/9781492024323/), thanks the author [Yves Hilpisch](https://www.linkedin.com/in/dyjh/?locale=en_US)
