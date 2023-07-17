@@ -12,3 +12,34 @@ Data engineering is the development, implementation, and maintenance of systems 
 
 ## the data engineering lifecycle
 
+
+
+![Data Engineer Lifecycle](/img/data_engineer_lifecycle.png)
+
+1. generation
+2. storage
+3. ingestion
+4. transformation
+5. serving
+
+
+undercurrents of the data engineering
+1. security
+2. data management
+3. dataOps
+4. data architecture
+5. Orchestration
+6. Software Engineer
+
+languages:
+1. SQK
+2. Python
+3. Java
+4. bash
+
+may need to proficiency:
+1. R
+2. Javascript
+3. C++
+
+
