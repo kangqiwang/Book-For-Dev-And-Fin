@@ -76,7 +76,68 @@ a source system is the origin of the data used in the data engineering lifecycle
 5. Will downstream users and processes be able to retrieve data in the required service-level agreement (SLA)?
 6. Are you capturing metadata about schema evolution, data flows, data lineage, and so forth? Metadata has a significant impact on the utility of data. Metadata represents an investment in the future, dramatically enhancing discoverability and institutional knowledge to streamline future projects and architecture changes.
 7. Is this a pure storage solution (object storage), or does it support complex query patterns (i.e., a cloud data warehouse)?
-8. 
+8. Is the storage system schema-agnostic (object storage)? Flexible schema (Cassandra)? Enforced schema (a cloud data warehouse)?
+9. How are you tracking master data, golden records data quality, and data lineage for data governance? (We have more to say on these in “Data Management”.)
+10. How are you handling regulatory compliance and data sovereignty? for example, can you store your data in certain geographical locations but not others.
+
+
+
+understanding data access frequency
+data that is most frequently accessed is called hot data.
+Lukewarm data might be accessed every so often-say, every week or month
+cold data is seldom queried and is appropriate for storing in an archival system.
+
+#### ingestion
+
+the next stage of the data engineering lifecycle is data ingestion from source systems
+
+source systems and ingestion represent the most significant bottlenecks of the data engineering lifecycle. 
+1. what are the use cases for the data i am ingesting? can I reuse this data rather than create multiple versions of the same dataset?
+2. are the systems generating and ingesting this data reliably, and is the data available when i need it ?
+3. what is the data destination after ingestion?
+4. how frequntly will I need to access the data ?
+5. in what volume will the data typically arrive?
+6. what format is the data in ? can my downstream storage and transformation systems handle this format?
+7. is the source data in good shape for immediate downstream use? if so, for how long, and what may cause it to be unusable?
+8. if the data is from a streaming source, does it need to be transformed before reaching its destination ? would an in-flight transformation be appropriate, where the data is transformed within the stream itself?
+
+
+batch versus streaming 
+
+batch ingestion is simple a specialized and convenient way of processing this stream in large chunks- for example, handling a full day's worth of data in a single batch.
+
+streaming ingestion allows us to provide data to downstream systems - whether other applications, databases, or analytics systems- in a continuous, real-time fashion.
+
+because of limitation of legacy systems, batch was for a long time the default way to ingest data. batch processing remains an extremely popular way to ingest data for downstream consumption, particularly in analytics and ML.
+
+however, the separation of storage and compute in many systems and the ubiquity of event-streaming and processing platforms make the continuous processing of data streams much more accessible and increasingly popular.the choice largely depends on the use case and expectations for data timeliness.
+
+### batch vs steam ingestion
+
+1. if I ingest the data in real time, can downstream storage systems handle the rate of data flow?
+2. do I need millisecond real-time data ingestion? or would a micro-batch approach work, accumulating and ingesting data, say, every minute?
+3. what are my use case for streaming ingestion ? what specific benefits do i realize by implementing streaming? if I get data in real time, what actions can I take on that data that would be an improvement upon batch?
+4. will my streaming-first approach cost more in terms of time, money, maintenance, downtime, and opportunity cost than simply doing batch?
+5. are my streaming pipeline and ystem reliable and redundant if infrastructure fails?
+6. What tools are most appropriate for the use case? Should I use a managed service (Amazon Kinesis, Google Cloud Pub/Sub, Google Cloud Dataflow) or stand up my own instances of Kafka, Flink, Spark, Pulsar, etc.? If I do the latter, who will manage it? What are the costs and trade-offs?
+7. if I am deploying an ML model, what benefits do I have with online predictions and possibly contiuous traning?
+8. Am I getting data from a live production instance ? if so, what's impact of my ingestion process on this source system?
+
+steaming-firsty might seem like a good idea, but it's not always straightforward
+
+### push vs pull
+
+in the push modelof data ingestion, a source system writes data out to a target whether a database, object store, or filesystem. In the pull model, data is retrieved from the source system.
+
+
+### tranformation
+
+data needs to be changed from its original form into something useful for downstream use cases. without proper transformations, data will sit inert, and not be in a usefyl form for reports, analysis, or ML. Typically, the transformations stage is where data begins to create value for downstream user consumption
+
+1. what's the cost and return on investment(ROI) of the transformation? what is the associated business value?
+2. is the transformation as simple and self-isolated as possible?
+3. what business rules do the transformations support?
+
 
 
 
