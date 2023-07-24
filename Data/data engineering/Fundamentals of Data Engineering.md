@@ -139,6 +139,39 @@ data needs to be changed from its original form into something useful for downst
 3. what business rules do the transformations support?
 
 
+### Serving Data
+
+1. analytics
+it is core of most data endeavors. Once your data is stored and transformed, you are ready to generate reports or dashboards and do ad hoc analysis on the data.
+    - Business intelligence
+    - Operational analytics
+    - Embedded analytics
+
+2. Machine Learning
+    - Is the data of sufficient quality to perform reliable feature engineering? Quality requirements and assessments are developed in close collaboration with teams consuming the data.
+    - Is the data discoverable? Can data scientists and ML engineers easily find valuable data?
+    - Where are the technical and organizational boundaries between data engineering and ML engineering? This organizational question has significant architectural implications.
+    - Does the dataset properly represent ground truth? Is it unfairly biased?
+
+3. Reverse ELT
 
 
+### Undercurrent across data engineering lifecycle
+
+1. Security
+
+
+2. Data management
+
+
+3. DataOps
+
+
+4. Data architecture
+
+
+5. Orchestration
+
+
+6. Software Engineering
 
