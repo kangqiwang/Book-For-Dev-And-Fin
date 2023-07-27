@@ -160,12 +160,47 @@ it is core of most data endeavors. Once your data is stored and transformed, you
 
 1. Security
 
+data engineer must  understand both data and access security, exercising the principle of least privilege. it means giving a user or system access to only the essential data and resources to perform an intended function.
+
+People and organizational structure are always the biggest security vulnerabilities in any company. When we hear about major security breaches in the media, it often turns out that someone in the company ignored basic precautions, fell victim to a phishing attack, or otherwise acted irresponsibly. The first line of defense for data security is to create a culture of security that permeates the organization. All individuals who have access to data must understand their responsibility in protecting the company’s sensitive data and its customers.
+
+Data security is also about timing—providing data access to exactly the people and systems that need to access it and only for the duration necessary to perform their work. Data should be protected from unwanted visibility, both in flight and at rest, by using encryption, tokenization, data masking, obfuscation, and simple, robust access controls.
+
 
 2. Data management
+
+Data management is the development, execution, and supervision of plans, policies, programs, and practices that deliver, control, protect, and enhance the value of data and information assets throughout their lifecycle.
+
+
+ - Data governance:
+
+ - Metadata:
+
+ - Data accountability:
+
+ - Data quality:
+
+ - Data modeling and design:
+
+ - Data lineage:
+
+ - data integration and interoperability:
+
+ - data lifecycle management:
+
+ - Ethics and privacy:
+
 
 
 3. DataOps
 
+DataOps maps the best practices of Agile methodology, DevOps, and statistical process control to data. Whereas DevOps aims to improve the release and quality of software products, DataOps does the same thing for data products
+
+- Rapid innovation and experimentation delivering new insights to customers with increasing velocity
+- Extremely high data quality and very low error rates
+- Collaboration across complex arrays of people, technology, and environments
+- Clear measurement, monitoring, and transparency of results
+- Lean practices (such as lead time reduction and minimizing defects) and the resulting improvements to quality and productivity are things we are glad to see gaining momentum both in software and data operations.
 
 4. Data architecture
 
