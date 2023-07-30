@@ -112,7 +112,7 @@ because of limitation of legacy systems, batch was for a long time the default w
 
 however, the separation of storage and compute in many systems and the ubiquity of event-streaming and processing platforms make the continuous processing of data streams much more accessible and increasingly popular.the choice largely depends on the use case and expectations for data timeliness.
 
-### batch vs steam ingestion
+#### batch vs steam ingestion
 
 1. if I ingest the data in real time, can downstream storage systems handle the rate of data flow?
 2. do I need millisecond real-time data ingestion? or would a micro-batch approach work, accumulating and ingesting data, say, every minute?
@@ -125,12 +125,12 @@ however, the separation of storage and compute in many systems and the ubiquity 
 
 steaming-firsty might seem like a good idea, but it's not always straightforward
 
-### push vs pull
+#### push vs pull
 
 in the push modelof data ingestion, a source system writes data out to a target whether a database, object store, or filesystem. In the pull model, data is retrieved from the source system.
 
 
-### tranformation
+#### tranformation
 
 data needs to be changed from its original form into something useful for downstream use cases. without proper transformations, data will sit inert, and not be in a usefyl form for reports, analysis, or ML. Typically, the transformations stage is where data begins to create value for downstream user consumption
 
@@ -139,7 +139,7 @@ data needs to be changed from its original form into something useful for downst
 3. what business rules do the transformations support?
 
 
-### Serving Data
+#### Serving Data
 
 1. analytics
 it is core of most data endeavors. Once your data is stored and transformed, you are ready to generate reports or dashboards and do ad hoc analysis on the data.
@@ -156,7 +156,7 @@ it is core of most data endeavors. Once your data is stored and transformed, you
 3. Reverse ELT
 
 
-### Undercurrent across data engineering lifecycle
+#### Undercurrent across data engineering lifecycle
 
 1. Security
 
@@ -172,13 +172,14 @@ Data security is also about timing—providing data access to exactly the people
 Data management is the development, execution, and supervision of plans, policies, programs, and practices that deliver, control, protect, and enhance the value of data and information assets throughout their lifecycle.
 
 
- - Data governance:
+ - Data governance:a business analyst gets a reques for a report but doesn't know what data to use to answer the question.core: discoverability, security, and accountability
+  
 
- - Metadata:
+ - Metadata:business metadata, technical metadata, operational metadata, reference metadata
 
  - Data accountability:
 
- - Data quality:
+ - Data quality: accuracy , completeness, timelines
 
  - Data modeling and design:
 
@@ -188,25 +189,71 @@ Data management is the development, execution, and supervision of plans, policie
 
  - data lifecycle management:
 
- - Ethics and privacy:
+ - Ethics and privacy: mask personally identifiable information(PII) and other sensitive information, data regulations, such as GDPR, CCPA
 
 
 
 3. DataOps
 
-DataOps maps the best practices of Agile methodology, DevOps, and statistical process control to data. Whereas DevOps aims to improve the release and quality of software products, DataOps does the same thing for data products
+DataOps maps the best practices of Agile methodology, DevOps, and statistical process control to data. Whereas DevOps aims to improve the release and quality of software products, DataOps does the same thing for data products.
 
 - Rapid innovation and experimentation delivering new insights to customers with increasing velocity
 - Extremely high data quality and very low error rates
 - Collaboration across complex arrays of people, technology, and environments
 - Clear measurement, monitoring, and transparency of results
-- Lean practices (such as lead time reduction and minimizing defects) and the resulting improvements to quality and productivity are things we are glad to see gaining momentum both in software and data operations.
+
+
+ - Automation
+ - Observability and monitoring
+ - Incident response
+Lean practices (such as lead time reduction and minimizing defects) and the resulting improvements to quality and productivity are things we are glad to see gaining momentum both in software and data operations.
 
 4. Data architecture
 
 
+
 5. Orchestration
+
+orchestration systems also build job history capabilities, visulization and alerting, Airflow
 
 
 6. Software Engineering
+
+- cire data processing code
+- development of open source frameworks
+- streaming
+- Infrastructure as code
+- Pipelines as code
+- General-purpose problem solving
+
+
+## designing good data architecture
+
+### principles of good data architecture
+
+#### choose common conponents wisely
+
+#### plan for failure
+
+
+#### architecture for scalability
+
+
+
+#### architecture is leadership
+
+#### always be architecting
+
+
+#### build loosely coupled systems
+
+
+#### make reversible decisions
+
+
+#### prioritize seurity
+
+
+#### embrace finops
+
 
