@@ -247,6 +247,7 @@ orchestration systems also build job history capabilities, visulization and aler
 
 #### build loosely coupled systems
 
+systems are broken into many small components, these systems interface with other services through abstraction layers, such as a messageing bus or an API
 
 #### make reversible decisions
 
@@ -257,3 +258,49 @@ orchestration systems also build job history capabilities, visulization and aler
 #### embrace finops
 
 
+## data Generation is source systems
+
+### files and unstructured Data
+
+### APIs
+
+### Application Database(OLTP systems)
+
+online transaction processing system
+
+#### ACID
+
+atomicity, consistency, isolation, and durability
+
+### online analytical processing system
+
+
+### change data capture
+
+### logs
+
+1. binary-encoded logs
+2. semistructured logs
+3. plain-text (unstructured) logs
+
+### Database Logs
+
+### CRUD
+
+### Insert-Only
+
+### messages and streams
+
+
+### types of times
+
+[types of time](../../img/types_of_times.PNG)
+
+
+### Apis
+
+#### REST api
+
+#### GraphQL
+
+#### Webhooks 
