@@ -42,13 +42,13 @@ may need to proficiency:
 
 
 
-## the data engineering lifecycle
+## Chapter 2. the data engineering lifecycle
 ![Data Engineer Lifecycle](/img/data_engineer_lifecycle.png)
 
 ### generation: source systems
 a source system is the origin of the data used in the data engineering lifecycle. for example, a source system could be an IoT device, an message queue, or a transactional database. frequency and velocity of the data
 
-#### source system
+#### source systems
 
 1. What are the essential characteristics of the data source? Is it an application? A swarm of IoT devices?
 2. How is data persisted in the source system? Is data persisted long term, or is it temporary and quickly deleted
@@ -227,7 +227,7 @@ orchestration systems also build job history capabilities, visulization and aler
 - General-purpose problem solving
 
 
-## designing good data architecture
+## Chapter 3. designing good data architecture
 
 ### principles of good data architecture
 
@@ -258,11 +258,42 @@ systems are broken into many small components, these systems interface with othe
 #### embrace finops
 
 
-## data Generation is source systems
+
+## chapter 4. Choosing technologies across the data engineering lifecycle
+
+[infrastructure for Stroage, Hadoop, Data lakes,Data Warehouses, Streaming](../../img/infrastructure_1.jpg)
+
+[infrastructure for Database, MPP DBs,Serverless, Cluster SVCS](../../img/infrastructure_2.jpg)
+
+[infrastructure for ETL/Data Transformation, Data integration,data governance, data quality](../../img/infrastructure_3.jpg)
+
+
+[infrastructure for Monitoring,Datqa Generation & LAbelling, AI OPS, GPU DBs & Cloud, AL Hardware](../../img/infrastructure_4.jpg)
+
+[analytics & machine intelligence for BI Platforms, Visualization, Data Analyst platforms](../../img/Analytics_1.jpg)
+
+[analytics & machine intelligence for Data Science notebooks. Data science platforms, machine learning](../../img/analytics_2.jpg)
+
+[analytics & machine intelligence for Computer Vision, Horizontal AI,Speech & NLP](../../img/analytics_3.jpg)
+
+[analytics & machine intelligence for Search, Log Analytics, social Analutics, web Mobile Commerce Analytics](../../img/analytics_4.jpg)
+
+[open source and data sources& apis for frameworks,querym databases, streaming,state tools, ai ops, data marketplaces, financial & economic data, AIR,space,sea,people/entities](../../img/opensource_api_1.jpg)
+
+[open source and data sources& apis for ai/machine learning/search/logging/visualization,collaboration,security,location intelligence,other, data services,incubators & schools, research](../../img/opensource_api_2.jpg)
+
+
+
+
+## Chapter 5. data Generation is source systems
 
 ### files and unstructured Data
 
+you will use certain formats heavily as a data engineer such as Parquet,ORC, and Avro
+
 ### APIs
+
+automating API data ingestion
 
 ### Application Database(OLTP systems)
 
