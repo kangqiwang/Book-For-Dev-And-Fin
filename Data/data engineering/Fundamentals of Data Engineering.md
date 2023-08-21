@@ -81,7 +81,6 @@ a source system is the origin of the data used in the data engineering lifecycle
 10. How are you handling regulatory compliance and data sovereignty? for example, can you store your data in certain geographical locations but not others.
 
 
-
 understanding data access frequency
 data that is most frequently accessed is called hot data.
 Lukewarm data might be accessed every so often-say, every week or month
@@ -261,33 +260,36 @@ systems are broken into many small components, these systems interface with othe
 
 ## chapter 4. Choosing technologies across the data engineering lifecycle
 
-[infrastructure for Stroage, Hadoop, Data lakes,Data Warehouses, Streaming](../../img/infrastructure_1.jpg)
+![infrastructure for Stroage, Hadoop, Data lakes,Data Warehouses, Streaming](../../img/infrastructure_1.jpg)
 
-[infrastructure for Database, MPP DBs,Serverless, Cluster SVCS](../../img/infrastructure_2.jpg)
+![infrastructure for Database, MPP DBs,Serverless, Cluster SVCS](../../img/infrastructure_2.jpg)
 
-[infrastructure for ETL/Data Transformation, Data integration,data governance, data quality](../../img/infrastructure_3.jpg)
+![infrastructure for ETL/Data Transformation, Data integration,data governance, data quality](../../img/infrastructure_3.jpg)
 
 
-[infrastructure for Monitoring,Datqa Generation & LAbelling, AI OPS, GPU DBs & Cloud, AL Hardware](../../img/infrastructure_4.jpg)
+![infrastructure for Monitoring,Datqa Generation & LAbelling, AI OPS, GPU DBs & Cloud, AL Hardware](../../img/infrastructure_4.jpg)
 
-[analytics & machine intelligence for BI Platforms, Visualization, Data Analyst platforms](../../img/Analytics_1.jpg)
+![analytics & machine intelligence for BI Platforms, Visualization, Data Analyst platforms](../../img/Analytics_1.jpg)
 
-[analytics & machine intelligence for Data Science notebooks. Data science platforms, machine learning](../../img/analytics_2.jpg)
+![analytics & machine intelligence for Data Science notebooks. Data science platforms, machine learning](../../img/analytics_2.jpg)
 
-[analytics & machine intelligence for Computer Vision, Horizontal AI,Speech & NLP](../../img/analytics_3.jpg)
+![analytics & machine intelligence for Computer Vision, Horizontal AI,Speech & NLP](../../img/analytics_3.jpg)
 
-[analytics & machine intelligence for Search, Log Analytics, social Analutics, web Mobile Commerce Analytics](../../img/analytics_4.jpg)
+![analytics & machine intelligence for Search, Log Analytics, social Analutics, web Mobile Commerce Analytics](../../img/analytics_4.jpg)
 
-[open source and data sources& apis for frameworks,querym databases, streaming,state tools, ai ops, data marketplaces, financial & economic data, AIR,space,sea,people/entities](../../img/opensource_api_1.jpg)
+![open source and data sources& apis for frameworks,querym databases, streaming,state tools, ai ops, data marketplaces, financial & economic data, AIR,space,sea,people/entities](../../img/opensource_api_1.jpg)
 
-[open source and data sources& apis for ai/machine learning/search/logging/visualization,collaboration,security,location intelligence,other, data services,incubators & schools, research](../../img/opensource_api_2.jpg)
+![open source and data sources& apis for ai/machine learning/search/logging/visualization,collaboration,security,location intelligence,other, data services,incubators & schools, research](../../img/opensource_api_2.jpg)
 
 
 
 
 ## Chapter 5. data Generation is source systems
 
+
 ### files and unstructured Data
+
+a file is sequence of bytes, typically stored on a disk
 
 you will use certain formats heavily as a data engineer such as Parquet,ORC, and Avro
 
@@ -300,6 +302,14 @@ automating API data ingestion
 online transaction processing system
 
 #### ACID
+
+atomicity: all changes to data are performed as if they are a single operation.
+
+consistency means that any databases read will return the last written version of the retrieved item.
+
+Isolation entails that if two updates are in flight concurrently for the same thing, the end database state  will be consistent with the sequential execution of these updates in the order they were submitted.
+
+durability indicates that committed data will never be lost, even in the event of power loss.
 
 atomicity, consistency, isolation, and durability
 
@@ -325,13 +335,254 @@ atomicity, consistency, isolation, and durability
 
 ### types of times
 
-[types of time](../../img/types_of_times.PNG)
+![types of time](../../img/types_of_times.PNG)
 
 
 ### Apis
 
 #### REST api
 
+rest stands for representational state transfer.
+
+one of the principle ideas of REST is that interactions are stateless.each rest call is independent.
+
 #### GraphQL
 
 #### Webhooks 
+
+simple event-based data-transmission pattern. the data source can be an application backend, web page, mobile app. webhooks are often called reverse APIs
+
+#### RPC and gROC
+
+a remote procedure call (RPC) is commonly used in distributed computing.
+
+#### data sharing
+
+The core concept of cloud data sharing is that a multitenant system supports security policies for sharing data among tenants. Concretely, any public cloud object storage system with a fine-grained permission system can be a platform for data sharing. Popular cloud data-warehouse platforms also support data-sharing capabilities. Of course, data can also be shared through download or exchange over email, but a multitenant system makes the process much easier.
+
+#### Third-Party Data Sources
+
+The consumerization of technology means every company is essentially now a technology company. The consequence is that these companies—and increasingly government agencies—want to make their data available to their customers and users, either as part of their service or as a separate subscription. For example, the US Bureau of Labor Statistics publishes various statistics about the US labor market. The National Aeronautics and Space Administration (NASA) publishes various data from its research initiatives. Facebook shares data with businesses that advertise on its platform.
+
+Why would companies want to make their data available? Data is sticky, and a flywheel is created by allowing users to integrate and extend their application into a user’s application. Greater user adoption and usage means more data, which means users can integrate more data into their applications and data systems. The side effect is there are now almost infinite sources of third-party data.
+
+
+#### message queues and event-streaming platforms
+
+#### undercurrents and their impact on source systems
+
+1. security
+Is the source system architected so data is secure and encrypted, both with data at rest and while data is transmitted?
+Do you have to access the source system over the public internet, or are you using a virtual private network (VPN)?
+Do you trust the source system? Always be sure to trust but verify that the source system is legitimate. You don’t want to be on the receiving end of data from a malicious actor.
+
+2. data management
+
+Data governance
+Are upstream data and systems governed in a reliable, easy-to-understand fashion? Who manages the data?
+
+Data quality
+How do you ensure data quality and integrity in upstream systems? Work with source system teams to set expectations on data and communication.
+
+Schema
+Expect that upstream schemas will change. Where possible, collaborate with source system teams to be notified of looming schema changes.
+
+Master data management
+Is the creation of upstream records controlled by a master data management practice or system?
+
+Privacy and ethics
+Do you have access to raw data, or will the data be obfuscated? What are the implications of the source data? How long is it retained? Does it shift locations based on retention policies?
+
+Regulatory
+Based upon regulations, are you supposed to access the data?
+
+3. dataOps
+
+Operational excellence—DevOps, DataOps, MLOps, XOps—should extend up and down the entire stack and support the data engineering and lifecycle. While this is ideal, it’s often not fully realized.
+
+Automation
+There’s the automation impacting the source system, such as code updates and new features. Then there’s the DataOps automation that you’ve set up for your data workflows. Does an issue in the source system’s automation impact your data workflow automation? If so, consider decoupling these systems so they can perform automation independently.
+
+Observability
+How will you know when there’s an issue with a source system, such as an outage or a data-quality issue? Set up monitoring for source system uptime (or use the monitoring created by the team that owns the source system). Set up checks to ensure that data from the source system conforms with expectations for downstream usage. For example, is the data of good quality? Is the schema conformant? Are customer records consistent? Is data hashed as stipulated by the internal policy?
+
+Incident response
+What’s your plan if something bad happens? For example, how will your data pipeline behave if a source system goes offline? What’s your plan to backfill the “lost” data once the source system is back online?
+
+
+4. data architecture
+
+Reliability
+All systems suffer from entropy at some point, and outputs will drift from what’s expected. Bugs are introduced, and random glitches happen. Does the system produce predictable outputs? How often can we expect the system to fail? What’s the mean time to repair to get the system back to sufficient reliability?
+
+Durability
+Everything fails. A server might die, a cloud’s zone or region could go offline, or other issues may arise. You need to account for how an inevitable failure or outage will affect your managed data systems. How does the source system handle data loss from hardware failures or network outages? What’s the plan for handling outages for an extended period and limiting the blast radius of an outage?
+
+Availability
+What guarantees that the source system is up, running, and available when it’s supposed to be?
+
+People
+Who’s in charge of the source system’s design, and how will you know if breaking changes are made in the architecture? A data engineer needs to work with the teams who maintain the source systems and ensure that these systems are architected reliably. Create an SLA with the source system team to set expectations about potential system failure.
+
+5. orchestration
+
+6. software egnineer
+
+
+## chapter 6. Storage
+
+data engineer storage abstraction
+
+The storage abstraction you require as a data engineer boils down to a few key considerations:
+
+Purpose and use case
+You must first identify the purpose of storing the data. What is it used for?
+
+Update patterns
+Is the abstraction optimized for bulk updates, streaming inserts, or upserts?
+
+Cost
+What are the direct and indirect financial costs? The time to value? The opportunity costs?
+
+Separate storage and compute
+The trend is toward separating storage and compute, but most systems hybridize separation and colocation. We cover this in “Separation of Compute from Storage” since it affects purpose, speed, and cost.
+
+
+Data warehouses are a standard OLAP data architecture
+
+data lake The data lake was originally conceived as a massive store where data was retained in raw, unprocessed form
+
+Data lakes primarily store raw, unprocessed data, often including multimedia files, log files, and other very large files, while data warehouses mostly store structured, processed, and refined data that tends to be text and numbers.
+
+
+Data Catalog
+A data catalog is a centralized metadata store for all data across an organization. Strictly speaking, a data catalog is not a top-level data storage abstraction, but it integrates with various systems and abstractions. Data catalogs typically work across operational and analytics data sources, integrate data lineage and presentation of data relationships, and allow user editing of data descriptions.
+
+Data Sharing
+
+
+Schema
+
+
+
+Example: AWS EMR with S3 and HDFS
+
+Big data services like Amazon EMR spin up temporary HDFS clusters to process data. Engineers have the option of referencing both S3 and HDFS as a filesystem. A common pattern is to stand up HDFS on SSD drives, pull from S3, and save data from intermediate processing steps on local HDFS. Doing so can realize significant performance gains over processing directly from S3. Full results are written back to S3 once the cluster completes its steps, and the cluster and HDFS are deleted. Other consumers read the output data directly from S3.
+
+
+example : Apache Spark
+
+In practice, Spark generally runs jobs on HDFS or some other ephemeral distributed filesystem to support performant storage of data between processing steps. In addition, Spark relies heavily on in-memory storage of data to improve processing. The problem with owning the infrastructure for running Spark is that dynamic RAM (DRAM) is extremely expensive; by separating compute and storage in the cloud, we can rent large quantities of memory and then release that memory when the job completes.
+
+example: Apache Druid
+
+Apache Druid relies heavily on SSDs to realize high performance. Since SSDs are significantly more expensive than magnetic disks, Druid keeps only one copy of data in its cluster, reducing “live” storage costs by a factor of three.
+
+Of course, maintaining data durability is still critical, so Druid uses an object store as its durability layer. When data is ingested, it’s processed, serialized into compressed columns, and written to cluster SSDs and object storage. In the event of node failure or cluster data corruption, data can be automatically recovered to new nodes. In addition, the cluster can be shut down and then fully recovered from SSD storage.
+
+
+
+### data storage lifecycle and data retention
+
+hot,warm,and cold data
+![hot,warm,cold data](../../img/data_storage.png)
+
+hot data for fast access such as SSD or memory
+
+warm data is accessed semi-regularly, say, once per month. no hard nad fast rules indicate how often warm data is accessed, but it's less than hot data nad more than cold data. for example, S3 offers an infrequently accessed Tier, and Google Cloud has a similar storage tier called Nearline
+
+cold data is infrequently accessed data. the hardware used to archive cold data is typically cheap and durable, such as HDD, tape storage, and cloud-based archival system
+
+### data retention
+
+may cause data swamps, now data engineers need to consider data retention: what data do you need to keep, and how long should you keep it?
+
+### Value
+
+data is an asset
+
+### time
+
+the value to downstream users also depends upon the age of the data. new data is typically more valuable and frequently accessed than older data.
+
+### compliance
+
+certain regulations. such HIPAA, PCI
+
+
+### cost
+
+data is an asset that has an ROI.
+
+
+### undercurrents
+
+#### security 
+
+as always, exercise the principle of least prilege, don't give full database access to anyone unless required.
+
+
+#### data management
+
+1. data catalogs and metadata management
+
+invest in your metadata. data dictionary, metadata enhance data governance.
+
+2. data versioning in object storage
+
+enable data versioning, it can help with error recovery when processes fail and data becomes corrupted. 
+Versioning is beneficial for tracking the history of datasets used to build models.
+data version control can aod ML engineer in tacking changes that lead to model performance degradation
+
+
+3. privacy
+
+GDPR and other privacy regulations have impacted storage system design. data engineer must be prepared to respond to data deletion requests and selectively remove data as required. engineers can accomodata privacy and security through anonymization and masking
+
+
+4. dataops
+dataops concerns itself with traditional operational monitoring of storage systems and monitoring the data itself, inseparable from metadata nad quality
+
+
+5. system monitoring
+
+data engineer must monitor storage in a variety of ways, this includes monitoring infrastructure storage components, should take the lead on FinOps(cost management), security monitoring, and access monitoring
+
+6. observing and monitoring data
+
+While metadata systems as we’ve described are critical, good engineering must consider the entropic nature of data by actively seeking to understand its characteristics and watching for major changes. Engineers can monitor data statistics, apply anomaly detection methods or simple rules, and actively test and validate for logical inconsistencies.
+
+
+#### data architecture
+
+#### Orchestration
+storage allows data to flow through pipelines, and orchestration is the pump.
+
+#### software engineer
+
+first, the code perform well with storage system. make sure the code you write stores the data correctly and doesn#t accidentally cause data, memory leaks.
+
+second, define your storage infrasttructure as code and use ephemeral compute resources when it's time to process your data.
+
+## Chapter 7. Ingestion
+
+data ingestion is the process of moving data from one place to another. data ingestion implies data movement from source systems into storage in the data enginering lifecycle, with ingestion as an intermediate step
+
+data pipeline is the combination of architecture systems and processes that move data through the stages of the data engineering lifecycle.
+
+1. what's the use case
+2. Can I reuse this data and avoid ingesting multiple versions of the same dataset
+3. Where is the data going? What’s the destination
+4. How often should the data be updated from the source?
+5. What is the expected data volume?
+6. What format is the data in? Can downstream storage and transformation accept this format?
+7. Is the source data in good shape for immediate downstream use? That is, is the data of good quality? What post-processing is required to serve it? What are data-quality risks (e.g., could bot traffic to a website contaminate the data)?
+8. Does the data require in-flight processing for downstream ingestion if the data is from a streaming source?
+
+
+### Bounded Versus Unbounded Data
+
+all data is unbounded until it's bounded
+
+### frequency
+
