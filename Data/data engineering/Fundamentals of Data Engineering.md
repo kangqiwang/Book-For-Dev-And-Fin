@@ -1,7 +1,7 @@
 # Fundamentals of Data Engineering
 this notes has been created based on [Fundamentals of Data Engineering](https://learning.oreilly.com/library/view/fundamentals-of-data/9781098108298/), thanks the author [Joe Reis](https://www.linkedin.com/in/josephreis/) and [Matt Housley](https://www.linkedin.com/in/housleymatthew/)
 
-## Data Engineering Described
+# Data Engineering Described
 
 1. fistly, data engineering is SQL-focused. The work and primary storage of the data is in relational databases.
 2. secondly, data engineering is Big Data-focused. The work and primary storage like Hadoop, Cassandra, and HBase. All of the data processing is done in Big Data framework like MapReduce, Spark, And Flink.
@@ -42,13 +42,13 @@ may need to proficiency:
 
 
 
-## Chapter 2. the data engineering lifecycle
+# Chapter 2. the data engineering lifecycle
 ![Data Engineer Lifecycle](/img/data_engineer_lifecycle.png)
 
-### generation: source systems
+## generation: source systems
 a source system is the origin of the data used in the data engineering lifecycle. for example, a source system could be an IoT device, an message queue, or a transactional database. frequency and velocity of the data
 
-#### source systems
+### source systems
 
 1. What are the essential characteristics of the data source? Is it an application? A swarm of IoT devices?
 2. How is data persisted in the source system? Is data persisted long term, or is it temporary and quickly deleted
@@ -67,7 +67,7 @@ a source system is the origin of the data used in the data engineering lifecycle
 15. Are data-quality checks in place to check for late or missing data?
 
 
-#### storage
+### storage
 
 1. Is this storage solution compatible with the architecture’s required write and read speeds?
 2. Will storage create a bottleneck for downstream processes?
@@ -86,7 +86,7 @@ data that is most frequently accessed is called hot data.
 Lukewarm data might be accessed every so often-say, every week or month
 cold data is seldom queried and is appropriate for storing in an archival system.
 
-#### ingestion
+### ingestion
 
 the next stage of the data engineering lifecycle is data ingestion from source systems
 
@@ -111,7 +111,7 @@ because of limitation of legacy systems, batch was for a long time the default w
 
 however, the separation of storage and compute in many systems and the ubiquity of event-streaming and processing platforms make the continuous processing of data streams much more accessible and increasingly popular.the choice largely depends on the use case and expectations for data timeliness.
 
-#### batch vs steam ingestion
+### batch vs steam ingestion
 
 1. if I ingest the data in real time, can downstream storage systems handle the rate of data flow?
 2. do I need millisecond real-time data ingestion? or would a micro-batch approach work, accumulating and ingesting data, say, every minute?
@@ -124,12 +124,12 @@ however, the separation of storage and compute in many systems and the ubiquity 
 
 steaming-firsty might seem like a good idea, but it's not always straightforward
 
-#### push vs pull
+### push vs pull
 
 in the push modelof data ingestion, a source system writes data out to a target whether a database, object store, or filesystem. In the pull model, data is retrieved from the source system.
 
 
-#### tranformation
+### tranformation
 
 data needs to be changed from its original form into something useful for downstream use cases. without proper transformations, data will sit inert, and not be in a usefyl form for reports, analysis, or ML. Typically, the transformations stage is where data begins to create value for downstream user consumption
 
@@ -138,7 +138,7 @@ data needs to be changed from its original form into something useful for downst
 3. what business rules do the transformations support?
 
 
-#### Serving Data
+### Serving Data
 
 1. analytics
 it is core of most data endeavors. Once your data is stored and transformed, you are ready to generate reports or dashboards and do ad hoc analysis on the data.
@@ -155,7 +155,7 @@ it is core of most data endeavors. Once your data is stored and transformed, you
 3. Reverse ELT
 
 
-#### Undercurrent across data engineering lifecycle
+### Undercurrent across data engineering lifecycle
 
 1. Security
 
@@ -226,39 +226,39 @@ orchestration systems also build job history capabilities, visulization and aler
 - General-purpose problem solving
 
 
-## Chapter 3. designing good data architecture
+# Chapter 3. designing good data architecture
 
-### principles of good data architecture
+## principles of good data architecture
 
-#### choose common conponents wisely
+### choose common conponents wisely
 
-#### plan for failure
-
-
-#### architecture for scalability
+### plan for failure
 
 
-
-#### architecture is leadership
-
-#### always be architecting
+### architecture for scalability
 
 
-#### build loosely coupled systems
+
+### architecture is leadership
+
+### always be architecting
+
+
+### build loosely coupled systems
 
 systems are broken into many small components, these systems interface with other services through abstraction layers, such as a messageing bus or an API
 
-#### make reversible decisions
+### make reversible decisions
 
 
-#### prioritize seurity
+### prioritize seurity
 
 
-#### embrace finops
+### embrace finops
 
 
 
-## chapter 4. Choosing technologies across the data engineering lifecycle
+# chapter 4. Choosing technologies across the data engineering lifecycle
 
 ![infrastructure for Stroage, Hadoop, Data lakes,Data Warehouses, Streaming](../../img/infrastructure_1.jpg)
 
@@ -284,24 +284,24 @@ systems are broken into many small components, these systems interface with othe
 
 
 
-## Chapter 5. data Generation is source systems
+# Chapter 5. data Generation is source systems
 
 
-### files and unstructured Data
+## files and unstructured Data
 
 a file is sequence of bytes, typically stored on a disk
 
 you will use certain formats heavily as a data engineer such as Parquet,ORC, and Avro
 
-### APIs
+## APIs
 
 automating API data ingestion
 
-### Application Database(OLTP systems)
+## Application Database(OLTP systems)
 
 online transaction processing system
 
-#### ACID
+### ACID
 
 atomicity: all changes to data are performed as if they are a single operation.
 
@@ -313,63 +313,62 @@ durability indicates that committed data will never be lost, even in the event o
 
 atomicity, consistency, isolation, and durability
 
-### online analytical processing system
+## online analytical processing system
 
 
-### change data capture
+## change data capture
 
-### logs
+## logs
 
 1. binary-encoded logs
 2. semistructured logs
 3. plain-text (unstructured) logs
 
-### Database Logs
+## Database Logs
 
-### CRUD
+## CRUD
 
-### Insert-Only
+## Insert-Only
 
-### messages and streams
+## messages and streams
 
 
-### types of times
-
+## types of times
 ![types of time](../../img/types_of_times.PNG)
 
 
-### Apis
+## Apis
 
-#### REST api
+### REST api
 
 rest stands for representational state transfer.
 
 one of the principle ideas of REST is that interactions are stateless.each rest call is independent.
 
-#### GraphQL
+### GraphQL
 
-#### Webhooks 
+### Webhooks 
 
 simple event-based data-transmission pattern. the data source can be an application backend, web page, mobile app. webhooks are often called reverse APIs
 
-#### RPC and gROC
+### RPC and gROC
 
 a remote procedure call (RPC) is commonly used in distributed computing.
 
-#### data sharing
+### data sharing
 
 The core concept of cloud data sharing is that a multitenant system supports security policies for sharing data among tenants. Concretely, any public cloud object storage system with a fine-grained permission system can be a platform for data sharing. Popular cloud data-warehouse platforms also support data-sharing capabilities. Of course, data can also be shared through download or exchange over email, but a multitenant system makes the process much easier.
 
-#### Third-Party Data Sources
+### Third-Party Data Sources
 
 The consumerization of technology means every company is essentially now a technology company. The consequence is that these companies—and increasingly government agencies—want to make their data available to their customers and users, either as part of their service or as a separate subscription. For example, the US Bureau of Labor Statistics publishes various statistics about the US labor market. The National Aeronautics and Space Administration (NASA) publishes various data from its research initiatives. Facebook shares data with businesses that advertise on its platform.
 
 Why would companies want to make their data available? Data is sticky, and a flywheel is created by allowing users to integrate and extend their application into a user’s application. Greater user adoption and usage means more data, which means users can integrate more data into their applications and data systems. The side effect is there are now almost infinite sources of third-party data.
 
 
-#### message queues and event-streaming platforms
+### message queues and event-streaming platforms
 
-#### undercurrents and their impact on source systems
+### undercurrents and their impact on source systems
 
 1. security
 Is the source system architected so data is secure and encrypted, both with data at rest and while data is transmitted?
@@ -429,7 +428,7 @@ Who’s in charge of the source system’s design, and how will you know if brea
 6. software egnineer
 
 
-## chapter 6. Storage
+# chapter 6. Storage
 
 data engineer storage abstraction
 
@@ -482,7 +481,7 @@ Of course, maintaining data durability is still critical, so Druid uses an objec
 
 
 
-### data storage lifecycle and data retention
+## data storage lifecycle and data retention
 
 hot,warm,and cold data
 ![hot,warm,cold data](../../img/data_storage.png)
@@ -493,36 +492,36 @@ warm data is accessed semi-regularly, say, once per month. no hard nad fast rule
 
 cold data is infrequently accessed data. the hardware used to archive cold data is typically cheap and durable, such as HDD, tape storage, and cloud-based archival system
 
-### data retention
+## data retention
 
 may cause data swamps, now data engineers need to consider data retention: what data do you need to keep, and how long should you keep it?
 
-### Value
+## Value
 
 data is an asset
 
-### time
+## time
 
 the value to downstream users also depends upon the age of the data. new data is typically more valuable and frequently accessed than older data.
 
-### compliance
+## compliance
 
 certain regulations. such HIPAA, PCI
 
 
-### cost
+## cost
 
 data is an asset that has an ROI.
 
 
-### undercurrents
+## undercurrents
 
-#### security 
+### security 
 
 as always, exercise the principle of least prilege, don't give full database access to anyone unless required.
 
 
-#### data management
+### data management
 
 1. data catalogs and metadata management
 
@@ -553,18 +552,18 @@ data engineer must monitor storage in a variety of ways, this includes monitorin
 While metadata systems as we’ve described are critical, good engineering must consider the entropic nature of data by actively seeking to understand its characteristics and watching for major changes. Engineers can monitor data statistics, apply anomaly detection methods or simple rules, and actively test and validate for logical inconsistencies.
 
 
-#### data architecture
+### data architecture
 
-#### Orchestration
+### Orchestration
 storage allows data to flow through pipelines, and orchestration is the pump.
 
-#### software engineer
+### software engineer
 
 first, the code perform well with storage system. make sure the code you write stores the data correctly and doesn#t accidentally cause data, memory leaks.
 
 second, define your storage infrasttructure as code and use ephemeral compute resources when it's time to process your data.
 
-## Chapter 7. Ingestion
+# Chapter 7. Ingestion
 
 data ingestion is the process of moving data from one place to another. data ingestion implies data movement from source systems into storage in the data enginering lifecycle, with ingestion as an intermediate step
 
@@ -579,10 +578,55 @@ data pipeline is the combination of architecture systems and processes that move
 7. Is the source data in good shape for immediate downstream use? That is, is the data of good quality? What post-processing is required to serve it? What are data-quality risks (e.g., could bot traffic to a website contaminate the data)?
 8. Does the data require in-flight processing for downstream ingestion if the data is from a streaming source?
 
-
+## key consideration for ingestion phase
 ### Bounded Versus Unbounded Data
 
 all data is unbounded until it's bounded
 
 ### frequency
+
+
+### synchronous vs asynchronous ingestion
+
+
+
+![asynchronous ingestion example](../../img/ingestion_asynchronous.png)
+
+
+### serialization vs deserialization
+
+serialization means encoding the data from a source and preparing data structures for transmission and intermediate storage stages
+
+### throughput and scalability
+
+### reliability vs durability
+
+### payload
+
+### push vs pull vs poll patterns
+
+## Batch ingestion consideration
+
+## Message and steam ingestion considerations
+
+## ways to ingest data
+
+## whom you will work with
+
+## undercurrents
+
+# Chapter 8. Queries, Modeling, And Transformation
+
+# Chapter 9. Serving Data for Analytics, machine learning, and reverse ETL
+
+# security,privacy and The future of data engineering
+
+# Chapter 10. Security and Privacy
+
+# Chapter 11. The Future of Data Engineering
+
+# Appendix A. Serialization and Compression Technical Details
+
+# Appendix B. Cloud Networking
+
 
