@@ -193,7 +193,7 @@ print(funny_division("hello"))
 
 ```
 
-![exception] (exception.jpg)
+![exception](../../img/exception.jpg)
 
 
 ```python
