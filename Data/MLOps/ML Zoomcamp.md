@@ -85,3 +85,20 @@ Feature Engineering is a key element of every ML project."Coming up with feature
 - Start simple (e.g. with a simple model)
 - Learn from feedback
 - Improve (e.g. come back to business understanding and make this model a bit more complex)
+
+#### the 6 steps
+1. Split datasets(60%-20%-20%)
+2. train the model
+3. apply the model to validation dataset Repeat 2 and 3 a few times
+4. select the best model
+5. Apply the model to the test dataset
+6. check everything is good(compare accuracy of validation and test datasets)
+
+#### alternative approach
+1. Split the original dataset into training, validation, and test sets with a ratio of 60%-20%-20%.
+2. Train the initial models using the training dataset.
+3. Apply the initial models to the validation dataset and evaluate their performance.
+4. Select the best-performing model based on the validation results.
+5. Combine the training and validation datasets to create a new combined dataset.
+6. Retrain the selected model using the new combined dataset.
+7. Apply the newly trained model to the test dataset to assess its performance on unseen data.
