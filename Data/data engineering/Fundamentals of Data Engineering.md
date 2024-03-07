@@ -29,7 +29,7 @@ undercurrents of the data engineering
 6. Software Engineer
 
 languages:
-1. SQK
+1. SQL
 2. Python
 3. Java
 4. bash

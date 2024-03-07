@@ -102,3 +102,49 @@ Feature Engineering is a key element of every ML project."Coming up with feature
 5. Combine the training and validation datasets to create a new combined dataset.
 6. Retrain the selected model using the new combined dataset.
 7. Apply the newly trained model to the test dataset to assess its performance on unseen data.
+
+### Linear algebra
+
+#### simple vector operations
+
+```python
+import numpy as np
+u = np.array([2,4,6,8])
+print(2*u)
+```
+
+```python
+import numpy as np
+ 
+u = np.array([2, 4, 5, 6])
+v = np.array([1, 0, 0, 2])
+print(u + v)
+```
+
+```python
+
+import numpy as np
+ 
+def vector_vector_multiplication(u, v):
+    assert u.shape[0] == v.shape[0]
+     
+    n = u.shape[0]
+     
+    result = 0.0
+     
+    for i in range(n):
+        result = result + u[i] * v[i]
+     
+    return result
+ 
+u = np.array([2, 4, 5, 6])
+v = np.array([1, 0, 0, 2])
+vector_vector_multiplication(u, v)
+# Output: 14.0
+ 
+# dot product is already implemented in numpy
+u.dot(v)
+# Output: 14.0```
+```
+
+
